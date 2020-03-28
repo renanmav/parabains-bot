@@ -11,8 +11,8 @@
   "scripts": {
     "build": "sucrase ./src -d ./dist --transforms typescript,imports",
     "clean": "rm -rf dist",
-    "dev": "sucrase-node ./src/index.ts",
     "lint": "eslint --ext .js,.json,.ts 'src/**'",
+    "standard": "sucrase-node ./src/standard/index.ts",
     "typecheck": "tsc"
   },
   "husky": {
