@@ -6,7 +6,10 @@
     "plugins": [
         "@typescript-eslint"
     ],
-    "rules": {},
+    "rules": {
+        "@typescript-eslint/camelcase": "off",
+        "@typescript-eslint/member-delimiter-st": "off"
+    },
     "overrides": [
         {
             "files": [
