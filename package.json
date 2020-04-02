@@ -1,18 +1,21 @@
 {
   "name": "parabains-bot",
   "version": "1.0.0",
+  "private": true,
   "license": "MIT",
   "author": {
     "name": "Renan Machado",
     "email": "renan.mav@hotmail.com",
     "url": "https://twitter.com/renanmav"
   },
-  "main": "src/index.ts",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
-    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
-    "clean": "rm -rf dist",
-    "lint": "eslint --ext .js,.json,.ts 'src/**'",
-    "standard": "sucrase-node ./src/standard/index.ts",
+    "lint": "eslint --ext .js,.json,.ts 'packages/**'",
+    "standard": "yarn workspace @parabains-bot/standard start",
     "typecheck": "tsc"
   },
   "husky": {
@@ -33,12 +36,7 @@
       "yarn sort-package-json"
     ]
   },
-  "dependencies": {
-    "twit": "^2.2.11"
-  },
   "devDependencies": {
-    "@types/node": "^13.7.1",
-    "@types/twit": "^2.2.23",
     "@typescript-eslint/eslint-plugin": "^2.19.2",
     "@typescript-eslint/parser": "^2.19.2",
     "console-helpers": "^0.0.4",

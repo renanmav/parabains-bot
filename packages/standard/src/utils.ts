@@ -1,4 +1,4 @@
-import Twit from 'twit'
+import { Twit } from '@parabains-bot/common'
 
 import { Tweet } from './typings/GetResponse'
 

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "composite": true,
+    "noEmit": true,
+    "typeRoots": ["./@types"]
+  },
+  "extends": "../../tsconfig.json",
+  "include": [
+    "src",
+    "src/**/*",
+    "@types"
+  ]
+}

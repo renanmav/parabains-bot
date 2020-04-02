@@ -1,6 +1,4 @@
-import { Params, Callback } from 'twit'
-
-import twit from '../index'
+import { twit, Params, Callback } from '@parabains-bot/common'
 
 import { GetResponse } from './typings/GetResponse'
 import { likeTweet, retweetTweet } from './utils'

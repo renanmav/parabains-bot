@@ -1,0 +1,14 @@
+{
+  "name": "@parabains-bot/standard",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
+    "clean": "rm -rf dist",
+    "start": "sucrase-node ./src/index.ts"
+  },
+  "dependencies": {
+    "@parabains-bot/common": "1.0.0"
+  }
+}

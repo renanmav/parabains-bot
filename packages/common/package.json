@@ -1,0 +1,13 @@
+{
+  "name": "@parabains-bot/common",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.1",
+    "@types/twit": "^2.2.23"
+  }
+}
