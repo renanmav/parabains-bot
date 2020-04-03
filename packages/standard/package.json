@@ -6,6 +6,7 @@
   "scripts": {
     "build": "sucrase ./src -d ./dist --transforms typescript,imports",
     "clean": "rm -rf dist",
+    "dataset": "sucrase-node ./src/generateDataset.ts",
     "start": "sucrase-node ./src/index.ts"
   },
   "dependencies": {
