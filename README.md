@@ -10,5 +10,5 @@ O Twitter tem [diversas APIs](https://developer.twitter.com/en/docs/tweets/searc
 
 Este app utiliza duas linguagens principais até agora:
 
-- Javascript: utilizado para interagir e controlar a conta do Twitter, ou seja, favoritar, retweetar e responder.
-- Python: Devido as limitações da API standard, é necessário fazer o melhor uso dos limites de favoritos, retweets e respostas. Dessa forma, esse app utiliza Machine Learning (ML) para fazer o processamento de linguagem natural e predizer se a interação com o tweet deve ser feita. Libs de ML escritas em python são as mais populares, como [sklearn](https://scikit-learn.org/stable/modules/classes.html) e [tensorflow](https://www.tensorflow.org/api_docs/python/tf).
+- **Javascript**: utilizado para interagir e controlar a conta do Twitter, ou seja, favoritar, retweetar e responder.
+- **Python**: Devido as limitações da API standard, é necessário fazer o melhor uso dos limites de favoritos, retweets e respostas. Dessa forma, esse app utiliza Machine Learning (ML) para fazer o processamento de linguagem natural e predizer se a interação com o tweet deve ser feita. Libs de ML escritas em python são as mais populares, como [sklearn](https://scikit-learn.org/stable/modules/classes.html) e [tensorflow](https://www.tensorflow.org/api_docs/python/tf).
