@@ -5,6 +5,10 @@ verify_ssl = true
 
 [packages]
 pandas = "*"
+sklearn = "*"
+numpy = "*"
+nltk = "*"
+flask = "*"
 
 [requires]
 python_version = "3.7"
