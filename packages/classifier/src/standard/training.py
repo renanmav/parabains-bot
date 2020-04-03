@@ -9,16 +9,18 @@ from sklearn.externals import joblib
 
 nltk.download('stopwords')
 stopwords = nltk.corpus.stopwords.words('portuguese')
+stopwords = [stopword for stopword in stopwords if stopword != 'meu']
 
 data = pd.read_csv('./data/standard.csv', sep=';')
 data.drop('url', axis=1, inplace=True)
 
-X_train, X_test, y_train, y_test = train_test_split(data['text'], data['is_birthday'], shuffle=True)
+X_train, X_test, y_train, y_test = train_test_split(
+    data['text'], data['is_birthday'], shuffle=True)
 
 text_clf = Pipeline([
     ('vect', CountVectorizer(stop_words=stopwords)),
     ('tfidf', TfidfTransformer()),
-    ('clf-svm', SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3))
+    ('clf-svm', SGDClassifier(loss='hinge', penalty='l2', alpha=1e-2))
 ])
 
 text_clf = text_clf.fit(X_train, y_train)
@@ -27,4 +29,4 @@ predicted = text_clf.predict(X_test)
 
 print(np.mean(predicted == y_test))
 
-joblib.dump(text_clf, 'standard.pkl')
+joblib.dump(text_clf, './src/standard/model.pkl')
