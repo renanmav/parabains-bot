@@ -47,7 +47,8 @@ const callback: Callback = (error, data) => {
         '..',
         '..',
         'standard-classifier',
-        'standard.csv',
+        'src',
+        'data1.csv',
       ),
       csvContent,
     )

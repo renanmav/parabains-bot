@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  jupyter:
+    image: tensorflow/tensorflow:latest-py3-jupyter
+    container_name: standard-classifier-notebook
+    ports:
+      - 8888:8888
+    volumes:
+      - ./src:/tf

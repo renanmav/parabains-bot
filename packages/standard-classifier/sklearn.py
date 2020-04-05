@@ -11,7 +11,7 @@ nltk.download('stopwords')
 stopwords = nltk.corpus.stopwords.words('portuguese')
 stopwords = list(filter(lambda w: w != 'não' and w != 'meu', stopwords))
 
-data = pd.read_csv('standard.csv', sep=';')
+data = pd.read_csv('data.csv', sep=';')
 data.drop('url', axis=1, inplace=True)
 
 X_train, X_test, y_train, y_test = train_test_split(

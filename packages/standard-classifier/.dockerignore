@@ -1,0 +1,4 @@
+scripts
+Pipfile
+Pipfile.lock
+.flake8
