@@ -16,7 +16,8 @@
   "scripts": {
     "lint": "eslint --ext .js,.json,.ts 'packages/**'",
     "standard": "yarn workspace @parabains-bot/standard start",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "standard-classifier:deploy": "cd ./packages/standard-classifier && ./scripts/deploy.sh"
   },
   "husky": {
     "hooks": {

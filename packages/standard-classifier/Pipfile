@@ -4,15 +4,16 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [packages]
-pandas = "*"
-sklearn = "*"
-numpy = "*"
-nltk = "*"
-flask = "*"
+scikit-learn = "==0.20.4"
+joblib = "*"
 
 [dev-packages]
+numpy = "*"
+nltk = "*"
+pandas = "*"
 flake8 = "*"
 autopep8 = "*"
+flake8-quotes = "*"
 
 [requires]
 python_version = "3.7"

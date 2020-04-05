@@ -1,0 +1,28 @@
+{
+  "name": "@parabains-bot/aws",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "cdk": "cdk",
+    "compile": "cdk synth",
+    "deploy": "cdk deploy"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-apigateway": "^1.31.0",
+    "@aws-cdk/aws-iam": "^1.31.0",
+    "@aws-cdk/aws-lambda": "^1.31.0",
+    "@aws-cdk/aws-lambda-event-sources": "^1.31.0",
+    "@aws-cdk/aws-route53": "^1.31.0",
+    "@aws-cdk/aws-s3": "^1.31.0",
+    "@aws-cdk/aws-s3-deployment": "^1.31.0",
+    "@aws-cdk/aws-secretsmanager": "^1.31.0",
+    "@aws-cdk/aws-sqs": "^1.31.0",
+    "@aws-cdk/aws-ssm": "^1.31.0",
+    "@aws-cdk/core": "^1.31.0",
+    "aws-cdk": "^1.31.0"
+  },
+  "devDependencies": {
+    "ts-node": "^8.8.1"
+  }
+}

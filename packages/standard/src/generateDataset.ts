@@ -42,7 +42,13 @@ const callback: Callback = (error, data) => {
       dataset.map((e) => e.join(';').replace('\n', ' ')).join('\n')
 
     fs.writeFileSync(
-      path.resolve(__dirname, '..', '..', 'classifier', 'data', 'standard.csv'),
+      path.resolve(
+        __dirname,
+        '..',
+        '..',
+        'standard-classifier',
+        'standard.csv',
+      ),
       csvContent,
     )
   }

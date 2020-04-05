@@ -105,3 +105,8 @@ dist
 .vscode
 *.joblib
 *.pkl
+*.zip
+
+requirements.txt
+
+.DS_Store
