@@ -5,3 +5,4 @@
 Dockerfile
 cdk.out
 packages/standard-classifier/dist/*
+node_modules

@@ -44,32 +44,29 @@ function make_sequences(phrase_array: string[]): number[][] {
   return sequences
 }
 
-export const handler = async (event): Promise<{}> => {
-  const sequences = make_sequences(event.body['data'])
+export const handler = async (event, context, callback) => {
+  try {
+    const body = JSON.parse(event.body)
 
-  const model = await tf.loadLayersModel(
-    'https://parabains-bot.s3.amazonaws.com/model.json',
-  )
+    const sequences = make_sequences(body['data'])
 
-  const predictions = model.predict(
-    tf.tensor2d(sequences, undefined, 'int32'),
-  ) as tf.Tensor<tf.Rank>
+    const model = await tf.loadLayersModel(
+      'https://parabains-bot.s3.amazonaws.com/model.json',
+    )
 
-  const predictions_array = predictions.arraySync() as number[][]
+    const predictions = model.predict(
+      tf.tensor2d(sequences, undefined, 'int32'),
+    ) as tf.Tensor<tf.Rank>
 
-  const results: number[] = predictions_array.map((pred) => pred[0])
+    const predictions_array = predictions.arraySync() as number[][]
 
-  return { predictions: results }
+    const results: number[] = predictions_array.map((pred) => pred[0])
+
+    const payload = JSON.stringify({ predictions: results })
+    console.log(results, payload)
+
+    callback(null, { statusCode: 200, body: payload })
+  } catch (e) {
+    callback(Error(e))
+  }
 }
-;(async function () {
-  const result = await handler({
-    body: {
-      data: [
-        'Hoje é o aniversário do meu filho',
-        'oi gnt hj é meu niver',
-        'oi gnt hj não é meu niver',
-      ],
-    },
-  })
-  console.log(result)
-})()

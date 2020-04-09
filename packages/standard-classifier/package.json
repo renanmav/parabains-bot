@@ -5,6 +5,7 @@
   "scripts": {
     "build": "yarn clean && webpack --config webpack.prod.js",
     "clean": "rm -rf dist",
+    "deploy": "./scripts/deploy.sh",
     "notebook": "docker-compose up",
     "start": "webpack --config webpack.dev.js --progress"
   },

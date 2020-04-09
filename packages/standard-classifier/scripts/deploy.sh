@@ -1,15 +1,11 @@
 #! /usr/bin/env bash
 set -ex
 
-rm -rf dist
+yarn workspace @parabains-bot/standard-classifier build
 
-pipenv lock -r > requirements.txt
+npm i --production
 
-pip3 install -r requirements.txt --no-deps --target ./dist
-
-# pipenv run pip3 install -r <(pipenv lock -r) --target dist
-
-cp aws.py model.pkl ./dist
+cp -r node_modules ./dist
 
 # Setup Stack
 yarn workspace @parabains-bot/aws deploy ParabainsBotStandardClassifier \

@@ -12,14 +12,11 @@ export class StandardClassifierStack extends CDK.Stack {
       {
         description:
           'Lambda Function that runs birthday predictions for standard module',
-        code: Lambda.Code.fromAsset('../standard-classifier/dist', {
-          exclude: ['*.tar.gz', '*.zip'],
-        }),
-        handler: 'aws.handler',
-        runtime: Lambda.Runtime.PYTHON_3_7,
-        memorySize: 512,
+        code: Lambda.Code.fromAsset('../standard-classifier/dist'),
+        handler: 'main.handler',
+        runtime: Lambda.Runtime.NODEJS_12_X,
+        memorySize: 128,
         timeout: CDK.Duration.seconds(15),
-        tracing: Lambda.Tracing.ACTIVE,
       },
     )
 
