@@ -1,25 +1,18 @@
 {
-    "extends": [
-        "plugin:@typescript-eslint/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "@typescript-eslint/camelcase": "off",
-        "@typescript-eslint/member-delimiter-st": "off"
-    },
-    "overrides": [
-        {
-            "files": [
-                "src/**/*.ts"
-            ],
-            "parserOptions": {
-                "project": [
-                    "./tsconfig.json"
-                ]
-            }
-        }
-    ]
+  "extends": ["plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/member-delimiter-st": "off",
+    "@typescript-eslint/no-var-requires": "off"
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      }
+    }
+  ]
 }

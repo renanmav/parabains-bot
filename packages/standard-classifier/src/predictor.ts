@@ -1,5 +1,4 @@
-import path from 'path'
-import * as tf from '@tensorflow/tfjs-node'
+import * as tf from '@tensorflow/tfjs'
 
 import { vocabulary, oov_token, padding_max_len } from './__generated__/config'
 
@@ -49,7 +48,7 @@ export const handler = async (event): Promise<{}> => {
   const sequences = make_sequences(event.body['data'])
 
   const model = await tf.loadLayersModel(
-    tf.io.fileSystem(path.join(__dirname, './__generated__/model.json')),
+    'https://parabains-bot.s3.amazonaws.com/model.json',
   )
 
   const predictions = model.predict(

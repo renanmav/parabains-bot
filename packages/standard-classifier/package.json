@@ -3,9 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "notebook": "docker-compose up"
+    "build": "yarn clean && webpack --config webpack.prod.js",
+    "clean": "rm -rf dist",
+    "notebook": "docker-compose up",
+    "start": "webpack --config webpack.dev.js --progress"
   },
   "dependencies": {
-    "@tensorflow/tfjs-node": "^1.7.2"
+    "@tensorflow/tfjs": "^1.7.2"
+  },
+  "devDependencies": {
+    "babel-loader": "^8.1.0",
+    "reload-server-webpack-plugin": "^1.0.1",
+    "terser-webpack-plugin": "^2.3.5",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2",
+    "webpack-node-externals": "^1.7.2"
   }
 }

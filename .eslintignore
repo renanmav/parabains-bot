@@ -4,3 +4,4 @@
 *.csv
 Dockerfile
 cdk.out
+packages/standard-classifier/dist/*
