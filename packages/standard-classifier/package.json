@@ -4,5 +4,8 @@
   "private": true,
   "scripts": {
     "notebook": "docker-compose up"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^1.7.2"
   }
 }
