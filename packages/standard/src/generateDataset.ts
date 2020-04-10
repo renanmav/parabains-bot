@@ -25,7 +25,7 @@ const callback: Callback = (error, data) => {
     for (const tweet of statuses) {
       const record: [string, string, number?] = [
         `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`,
-        String(tweet.text).replace('\n', ' '),
+        String(tweet.text).replace(/\r?\n/g, ' '),
       ]
 
       if (tweet.text.match(rtTweetPattern)) {
