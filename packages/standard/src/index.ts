@@ -69,4 +69,6 @@ const callback: Callback = async (error, data) => {
   }
 }
 
-twit.get('search/tweets', twitterOptions, callback)
+export const handler = async () => {
+  await twit.get('search/tweets', twitterOptions, callback)
+}

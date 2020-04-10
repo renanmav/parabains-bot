@@ -14,11 +14,13 @@
     ]
   },
   "scripts": {
+    "deploy": "yarn standard-classifier:deploy && yarn standard:deploy",
     "lint": "eslint --ext .js,.json,.ts .",
     "standard": "yarn workspace @parabains-bot/standard start",
     "standard-classifier:deploy": "yarn workspace @parabains-bot/standard-classifier deploy",
     "standard-classifier:notebook": "yarn workspace @parabains-bot/standard-classifier notebook",
     "standard:dataset": "yarn workspace @parabains-bot/standard dataset",
+    "standard:deploy": "yarn workspace @parabains-bot/standard deploy",
     "typecheck": "tsc"
   },
   "husky": {
