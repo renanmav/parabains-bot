@@ -19,7 +19,7 @@ const q = 'Hoje é meu aniversário'
 
 const twitterOptions: Params = {
   q,
-  count: 10,
+  count: 5,
   result_type: 'recent',
 }
 
@@ -48,8 +48,10 @@ const callback: Callback = async (error, data) => {
       })
       const json = (await result.json()) as { predictions: number[] }
 
-      if (!json.predictions)
+      if (!json.predictions) {
+        !isProd && console.info(predictTweets)
         throw new Error('Missing predictions\n\n' + JSON.stringify(json))
+      }
 
       for (const [index, prediction] of json.predictions.entries()) {
         !isProd && console.info(predictTweets.texts[index])

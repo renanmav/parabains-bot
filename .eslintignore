@@ -4,5 +4,5 @@
 *.csv
 Dockerfile
 cdk.out
-packages/standard-classifier/dist/*
+packages/**/dist/*
 node_modules
