@@ -2,10 +2,12 @@
 import * as cdk from '@aws-cdk/core'
 
 import { StandardClassifierStack } from './stacks/StandardClassifier'
+import { UploadStandardClassifierModelStack } from './stacks/UploadStandardClassifierModel'
 
 const PACKAGES = {
   STANDARD_CLASSIFIER: 'standard-classifier',
   STANDARD: 'standard',
+  UPLOAD_STANDARD_CLASSIFIER: 'standard-classifier-upload',
 }
 const allowedPackages = Object.values(PACKAGES)
 
@@ -36,6 +38,21 @@ function run() {
         app,
         standardClassifierStackName,
         standardClassifierConfig,
+      )
+      break
+    case PACKAGES.UPLOAD_STANDARD_CLASSIFIER:
+      const uploadStandardClassifierModelStackName = `ParabainsBotUploadStandardClassifierModel`
+      const uploadStandardClassifierModelConfig = {
+        name: uploadStandardClassifierModelStackName,
+        env: {
+          account,
+          region: 'us-east-1',
+        },
+      }
+      new UploadStandardClassifierModelStack(
+        app,
+        uploadStandardClassifierModelStackName,
+        uploadStandardClassifierModelConfig,
       )
       break
     default:

@@ -1,6 +1,12 @@
 #! /usr/bin/env bash
 set -ex
 
+yarn workspace @parabains-bot/aws deploy ParabainsBotUploadStandardClassifierModel \
+  -c pkg=standard-classifier-upload \
+  -c account='986732804710' \
+  --require-approval=never \
+  --profile=parabains-bot
+
 yarn workspace @parabains-bot/standard-classifier build
 
 npm i --production
