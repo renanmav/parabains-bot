@@ -1,6 +1,6 @@
 const path = require('path')
 
-const nodeExternals = require('webpack-node-externals')
+const webpack = require('webpack')
 
 const common = require('@parabains-bot/webpack')
 
@@ -10,5 +10,4 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     ...common.output,
   },
-  externals: [nodeExternals()],
 }

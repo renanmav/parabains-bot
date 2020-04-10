@@ -4,10 +4,10 @@
   "private": true,
   "main": "src/index.ts",
   "scripts": {
-    "build": "yarn clean && webpack --config webpack.config.js",
+    "build": "yarn clean && webpack --config webpack.prod.js",
     "clean": "rm -rf dist",
     "dataset": "sucrase-node ./src/generateDataset.ts",
-    "start": "sucrase-node ./src/index.ts"
+    "start": "webpack --config webpack.dev.js --progress"
   },
   "dependencies": {
     "@parabains-bot/common": "1.0.0",
@@ -16,10 +16,7 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "babel-loader": "^8.1.0",
-    "reload-server-webpack-plugin": "^1.0.1",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
-    "webpack-merge": "^4.2.2"
+    "@parabains-bot/webpack": "1.0.0",
+    "babel-loader": "^8.1.0"
   }
 }

@@ -1,0 +1,13 @@
+{
+  "name": "@parabains-bot/webpack",
+  "version": "1.0.0",
+  "private": true,
+  "main": "webpack.config.js",
+  "dependencies": {
+    "reload-server-webpack-plugin": "^1.0.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
