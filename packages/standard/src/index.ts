@@ -1,3 +1,4 @@
+import path from 'path'
 import chalk from 'chalk'
 import fetch from 'node-fetch'
 import dotenv from 'dotenv'
@@ -6,12 +7,15 @@ dotenv.config()
 import { twit, Params, Callback } from '@parabains-bot/common'
 
 import { GetResponse } from './typings/GetResponse'
-import { likeTweet, sanatizeText } from './utils'
+
+import { likeTweet, sanatizeText, sendReplyWithMedia } from './utils'
 
 if (!process.env.PREDICT_URL)
   throw new Error('Missing PREDICT_URL environment variable')
 if (!process.env.THRESHOLD)
   throw new Error('Missing THRESHOLD environment variable')
+if (!process.env.ABSOLUTELY_SURE_THRESHOLD)
+  throw new Error('Missing ABSOLUTELY_SURE_THRESHOLD environment variable')
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -29,12 +33,17 @@ const callback: Callback = async (error, data) => {
   if (data) {
     const { statuses } = data as GetResponse['data']
 
-    const predictTweets = statuses.reduce<{ texts: string[]; ids: string[] }>(
+    const predictTweets = statuses.reduce<{
+      texts: string[]
+      ids: string[]
+      usernames: string[]
+    }>(
       (result, tweet) => ({
         texts: [...result.texts, sanatizeText(tweet.text)],
         ids: [...result.ids, tweet.id_str],
+        usernames: [...result.usernames, tweet.user.screen_name],
       }),
-      { texts: [], ids: [] },
+      { texts: [], ids: [], usernames: [] },
     )
 
     const body = JSON.stringify({
@@ -54,13 +63,39 @@ const callback: Callback = async (error, data) => {
       }
 
       for (const [index, prediction] of json.predictions.entries()) {
-        !isProd && console.info(predictTweets.texts[index])
+        !isProd &&
+          console.info(
+            chalk.yellow(`[${prediction}]`),
+            predictTweets.texts[index],
+          )
 
+        // Normal threshold
         if (parseFloat(process.env.THRESHOLD!) <= prediction) {
-          !isProd && console.log(chalk.green('Vou interagir'))
+          !isProd && console.log(chalk.green('Vou dar like'))
+
           likeTweet(twit, predictTweets.ids[index])
         } else {
-          !isProd && console.log(chalk.red('Nao vou interagir'))
+          !isProd && console.log(chalk.red('Não vou dar like'))
+        }
+
+        // Absolutely sure threshold
+        if (parseFloat(process.env.ABSOLUTELY_SURE_THRESHOLD!) <= prediction) {
+          !isProd &&
+            console.log(chalk.green('Tenho certeza absoluta, vou responder'))
+
+          sendReplyWithMedia(
+            twit,
+            {
+              filePath: path.join(process.cwd(), './src/assets/parabains.gif'),
+              message: 'Parabains',
+              profileName: predictTweets.usernames[index],
+              statusId: predictTweets.ids[index],
+            },
+            isProd,
+          )
+          likeTweet(twit, predictTweets.ids[index])
+        } else {
+          !isProd && console.log(chalk.red('Nao vou responder'))
         }
       }
     } catch (err) {
@@ -72,3 +107,4 @@ const callback: Callback = async (error, data) => {
 export const handler = async () => {
   await twit.get('search/tweets', twitterOptions, callback)
 }
+twit.get('search/tweets', twitterOptions, callback)

@@ -6,12 +6,14 @@ export class StandardStack extends CDK.Stack {
   constructor(app: CDK.App, id: string, props: CDK.StackProps) {
     super(app, id, props)
 
+    // It should read from .env from standard package
     const environment = {
       PREDICT_URL: SSM.StringParameter.valueForStringParameter(
         this,
         'StandardClassifierApiUrl',
       ),
       THRESHOLD: '0.7',
+      ABSOLUTELY_SURE_THRESHOLD: '0.86',
     }
 
     new Lambda.Function(this, 'ParabainsBotStandardFunction', {
