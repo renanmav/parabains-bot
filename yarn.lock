@@ -176,20 +176,6 @@
     "@aws-cdk/core" "1.32.2"
     constructs "^2.0.0"
 
-"@aws-cdk/aws-dynamodb@1.32.2":
-  version "1.32.2"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-dynamodb/-/aws-dynamodb-1.32.2.tgz#364da2b41c0f116cfd9542f1eaf84a59bf240b2d"
-  integrity sha512-xDCKHTf5lCp9YTjnez3YhaAtTliEeFzWXVMNHIa6JtptCBn016IAtu1ruSTSiei8x1r58DYTNS/EAujxwYHuVQ==
-  dependencies:
-    "@aws-cdk/aws-applicationautoscaling" "1.32.2"
-    "@aws-cdk/aws-cloudformation" "1.32.2"
-    "@aws-cdk/aws-cloudwatch" "1.32.2"
-    "@aws-cdk/aws-iam" "1.32.2"
-    "@aws-cdk/aws-lambda" "1.32.2"
-    "@aws-cdk/core" "1.32.2"
-    "@aws-cdk/custom-resources" "1.32.2"
-    constructs "^2.0.0"
-
 "@aws-cdk/aws-ec2@1.32.2":
   version "1.32.2"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-ec2/-/aws-ec2-1.32.2.tgz#ac7031a797ad4bd4a72c9967d0b353415d5aebac"
@@ -313,17 +299,6 @@
     "@aws-cdk/core" "1.32.2"
     constructs "^2.0.0"
 
-"@aws-cdk/aws-glue@1.32.2":
-  version "1.32.2"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-glue/-/aws-glue-1.32.2.tgz#a0244aade3d8dae3b18c608c24df088d5362dee5"
-  integrity sha512-TSqJjbKLv9Px1qsGk+lqBsecpM28a9pxT+pnbMmCA3VUC3RvxtL6Sex0O27f6pMhbeYoWwXnYfe+GCr7Z8lbjw==
-  dependencies:
-    "@aws-cdk/aws-iam" "1.32.2"
-    "@aws-cdk/aws-kms" "1.32.2"
-    "@aws-cdk/aws-s3" "1.32.2"
-    "@aws-cdk/core" "1.32.2"
-    constructs "^2.0.0"
-
 "@aws-cdk/aws-iam@1.32.2":
   version "1.32.2"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-iam/-/aws-iam-1.32.2.tgz#ffe3a9714a4a4ac8d7921f1c4889fea039500c65"
@@ -333,42 +308,12 @@
     "@aws-cdk/region-info" "1.32.2"
     constructs "^2.0.0"
 
-"@aws-cdk/aws-kinesis@1.32.2":
-  version "1.32.2"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-kinesis/-/aws-kinesis-1.32.2.tgz#0dba4667b76127b93d55fa0e687e194b35208f7c"
-  integrity sha512-rYh/9QmxG8A5bGVkgdBYUFvgrgX1LJFZyoXQXRG+12FbJbsJgRhVJXxC+K5W7RJJsg5fwaWTD9wnh4Lywms0aQ==
-  dependencies:
-    "@aws-cdk/aws-iam" "1.32.2"
-    "@aws-cdk/aws-kms" "1.32.2"
-    "@aws-cdk/aws-logs" "1.32.2"
-    "@aws-cdk/core" "1.32.2"
-    constructs "^2.0.0"
-
 "@aws-cdk/aws-kms@1.32.2":
   version "1.32.2"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-kms/-/aws-kms-1.32.2.tgz#be6ecc7d755e96285f8b3090b7a9e764c5edbd05"
   integrity sha512-yjINmHXSd5r/XpqGuW0W5memx/LFMb4gKASDSbQPP4KZsP3xlJBQ1+t+ONeVe5iCJpAnh8uTCRNxgZ6CpopOrQ==
   dependencies:
     "@aws-cdk/aws-iam" "1.32.2"
-    "@aws-cdk/core" "1.32.2"
-    constructs "^2.0.0"
-
-"@aws-cdk/aws-lambda-event-sources@^1.32.2":
-  version "1.32.2"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-lambda-event-sources/-/aws-lambda-event-sources-1.32.2.tgz#bd3fedcf18d0001a94459f0196e693b455227849"
-  integrity sha512-EibY/f49Py14Wzc32g7E0pi8OgBg1b0R9kIaZcf52Sh0BjDvgai6++y+iOj9bDb1LZXIRiMwhccz5AjLUU2ttw==
-  dependencies:
-    "@aws-cdk/aws-apigateway" "1.32.2"
-    "@aws-cdk/aws-dynamodb" "1.32.2"
-    "@aws-cdk/aws-events" "1.32.2"
-    "@aws-cdk/aws-iam" "1.32.2"
-    "@aws-cdk/aws-kinesis" "1.32.2"
-    "@aws-cdk/aws-lambda" "1.32.2"
-    "@aws-cdk/aws-s3" "1.32.2"
-    "@aws-cdk/aws-s3-notifications" "1.32.2"
-    "@aws-cdk/aws-sns" "1.32.2"
-    "@aws-cdk/aws-sns-subscriptions" "1.32.2"
-    "@aws-cdk/aws-sqs" "1.32.2"
     "@aws-cdk/core" "1.32.2"
     constructs "^2.0.0"
 
@@ -450,19 +395,6 @@
     "@aws-cdk/aws-lambda" "1.32.2"
     "@aws-cdk/aws-s3" "1.32.2"
     "@aws-cdk/aws-s3-assets" "1.32.2"
-    "@aws-cdk/core" "1.32.2"
-    constructs "^2.0.0"
-
-"@aws-cdk/aws-s3-notifications@1.32.2":
-  version "1.32.2"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-s3-notifications/-/aws-s3-notifications-1.32.2.tgz#4124a928762fa329f4e59f06687c8f79b948c15a"
-  integrity sha512-ZEJKtnGa9rl4kFFH643p9HK05yy8HwnSBHQtZs4krb0N0Ue9ZSdYJb643NS9HX9iEra8c11GHHP7a3EMO5GvEg==
-  dependencies:
-    "@aws-cdk/aws-iam" "1.32.2"
-    "@aws-cdk/aws-lambda" "1.32.2"
-    "@aws-cdk/aws-s3" "1.32.2"
-    "@aws-cdk/aws-sns" "1.32.2"
-    "@aws-cdk/aws-sqs" "1.32.2"
     "@aws-cdk/core" "1.32.2"
     constructs "^2.0.0"
 
@@ -555,29 +487,6 @@
     "@aws-cdk/cx-api" "1.32.2"
     constructs "^2.0.0"
 
-"@aws-cdk/aws-stepfunctions-tasks@1.32.2":
-  version "1.32.2"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/aws-stepfunctions-tasks/-/aws-stepfunctions-tasks-1.32.2.tgz#9a24417457345e908e4f7c2e97e0961f8e24fa2d"
-  integrity sha512-t+i+W1ti8ohLq/q2ABFE2lY8GTBv8lloM0JJWq93d3EGuVSCtclsNpAMTkPD7GA3M5/NdoicdYCHxOQNwXZ1tg==
-  dependencies:
-    "@aws-cdk/assets" "1.32.2"
-    "@aws-cdk/aws-batch" "1.32.2"
-    "@aws-cdk/aws-cloudwatch" "1.32.2"
-    "@aws-cdk/aws-ec2" "1.32.2"
-    "@aws-cdk/aws-ecr" "1.32.2"
-    "@aws-cdk/aws-ecr-assets" "1.32.2"
-    "@aws-cdk/aws-ecs" "1.32.2"
-    "@aws-cdk/aws-glue" "1.32.2"
-    "@aws-cdk/aws-iam" "1.32.2"
-    "@aws-cdk/aws-kms" "1.32.2"
-    "@aws-cdk/aws-lambda" "1.32.2"
-    "@aws-cdk/aws-s3" "1.32.2"
-    "@aws-cdk/aws-sns" "1.32.2"
-    "@aws-cdk/aws-sqs" "1.32.2"
-    "@aws-cdk/aws-stepfunctions" "1.32.2"
-    "@aws-cdk/core" "1.32.2"
-    constructs "^2.0.0"
-
 "@aws-cdk/aws-stepfunctions@1.32.2":
   version "1.32.2"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-stepfunctions/-/aws-stepfunctions-1.32.2.tgz#faf33fe3f6b3738e3d83dd8492ca719ea61255a9"
@@ -622,21 +531,6 @@
   integrity sha512-gO+LpoGvToUwOGUhEsUAFAuRMjFhQvpbsurzJCEYFs/Je0vHX+b63iC4fkf74aZVHemKkDKY+xdzEAwIvIJB6Q==
   dependencies:
     "@aws-cdk/cx-api" "1.32.2"
-    constructs "^2.0.0"
-
-"@aws-cdk/custom-resources@1.32.2":
-  version "1.32.2"
-  resolved "https://registry.yarnpkg.com/@aws-cdk/custom-resources/-/custom-resources-1.32.2.tgz#6f413b20d864fae344aaccef89e609fbf739f4ad"
-  integrity sha512-YMrzyo3Ip9iSM2tuCAk27pQpuB2xBhnIPdSUJEjmF4gw+siHv+G8x2+fL1aWOdvN5QCodtSYulJFK9ZQ1fUsuw==
-  dependencies:
-    "@aws-cdk/aws-cloudformation" "1.32.2"
-    "@aws-cdk/aws-iam" "1.32.2"
-    "@aws-cdk/aws-lambda" "1.32.2"
-    "@aws-cdk/aws-logs" "1.32.2"
-    "@aws-cdk/aws-sns" "1.32.2"
-    "@aws-cdk/aws-stepfunctions" "1.32.2"
-    "@aws-cdk/aws-stepfunctions-tasks" "1.32.2"
-    "@aws-cdk/core" "1.32.2"
     constructs "^2.0.0"
 
 "@aws-cdk/cx-api@1.32.2":
