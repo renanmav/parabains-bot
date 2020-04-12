@@ -13,7 +13,6 @@
     "@tensorflow/tfjs": "^1.7.2"
   },
   "devDependencies": {
-    "@parabains-bot/webpack": "1.0.0",
-    "babel-loader": "^8.1.0"
+    "@parabains-bot/webpack": "1.0.0"
   }
 }

@@ -8,7 +8,7 @@
     "clean": "rm -rf dist",
     "dataset": "sucrase-node ./src/generateDataset.ts",
     "deploy": "./scripts/deploy.sh",
-    "start": "webpack --config webpack.dev.js --progress"
+    "start": "rm -rf dist && webpack --config webpack.dev.js --progress"
   },
   "dependencies": {
     "@parabains-bot/common": "1.0.0",
@@ -17,7 +17,6 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
-    "@parabains-bot/webpack": "1.0.0",
-    "babel-loader": "^8.1.0"
+    "@parabains-bot/webpack": "1.0.0"
   }
 }

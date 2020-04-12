@@ -7,8 +7,8 @@ dotenv.config()
 import { twit, Params, Callback } from '@parabains-bot/common'
 
 import { GetResponse } from './typings/GetResponse'
-
 import { likeTweet, sanatizeText, sendReplyWithMedia } from './utils'
+import './assets/parabains.gif'
 
 if (!process.env.PREDICT_URL)
   throw new Error('Missing PREDICT_URL environment variable')
@@ -23,7 +23,7 @@ const q = 'Hoje é meu aniversário'
 
 const twitterOptions: Params = {
   q,
-  count: 5,
+  count: 10,
   result_type: 'recent',
 }
 
