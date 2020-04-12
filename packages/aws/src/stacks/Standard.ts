@@ -58,7 +58,7 @@ export class StandardStack extends CDK.Stack {
     )
 
     const eventRule = new Events.Rule(this, 'StandardScheduleRule', {
-      schedule: Events.Schedule.expression('rate(30 min)'),
+      schedule: Events.Schedule.rate(CDK.Duration.minutes(30)),
     })
 
     eventRule.addTarget(new EventsTargets.LambdaFunction(standardFunc))
