@@ -23,7 +23,7 @@ const q = 'Hoje é meu aniversário'
 
 const twitterOptions: Params = {
   q,
-  count: 10,
+  count: 5,
   result_type: 'recent',
 }
 
