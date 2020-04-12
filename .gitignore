@@ -109,3 +109,4 @@ dist
 package-lock.json
 requirements.txt
 .DS_Store
+.idea

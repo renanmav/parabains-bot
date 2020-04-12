@@ -79,7 +79,7 @@ const callback: Callback = async (error, data) => {
           !isProd && console.log(chalk.red('Não vou dar like'))
         }
 
-        // Absolutely sure threshold
+        // // Absolutely sure threshold
         if (parseFloat(process.env.ABSOLUTELY_SURE_THRESHOLD!) <= prediction) {
           !isProd &&
             console.log(chalk.green('Tenho certeza absoluta, vou responder'))
@@ -87,7 +87,8 @@ const callback: Callback = async (error, data) => {
           sendReplyWithMedia(
             twit,
             {
-              filePath: path.join(process.cwd(), './src/assets/parabains.gif'),
+              // filePath: path.join(process.cwd(), './src/assets/parabains.gif'),
+              filePath: './src/assets/parabains.gif',
               message: 'Parabains',
               profileName: predictTweets.usernames[index],
               statusId: predictTweets.ids[index],
@@ -108,4 +109,3 @@ const callback: Callback = async (error, data) => {
 export const handler = async () => {
   await twit.get('search/tweets', twitterOptions, callback)
 }
-twit.get('search/tweets', twitterOptions, callback)
