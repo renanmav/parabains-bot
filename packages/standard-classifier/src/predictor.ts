@@ -63,7 +63,6 @@ export const handler = async (event, context, callback) => {
     const results: number[] = predictions_array.map((pred) => pred[0])
 
     const payload = JSON.stringify({ predictions: results })
-    console.log(results, payload)
 
     callback(null, { statusCode: 200, body: payload })
   } catch (e) {

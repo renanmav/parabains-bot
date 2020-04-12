@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import path from 'path'
 import chalk from 'chalk'
 import fetch from 'node-fetch'
