@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-import path from 'path'
 import chalk from 'chalk'
 import fetch from 'node-fetch'
 import dotenv from 'dotenv'
@@ -87,7 +86,6 @@ const callback: Callback = async (error, data) => {
           sendReplyWithMedia(
             twit,
             {
-              // filePath: path.join(process.cwd(), './src/assets/parabains.gif'),
               filePath: './src/assets/parabains.gif',
               message: 'Parabains',
               profileName: predictTweets.usernames[index],
