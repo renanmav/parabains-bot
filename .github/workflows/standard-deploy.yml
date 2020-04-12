@@ -4,13 +4,13 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'packages/standard/**'
-      - 'packages/common/**'
-      - 'packages/webpack/**'
-      - 'packages/babel/**'
-      - 'packages/aws/src/stacks/Standard.ts'
-      - 'packages/aws/src/index.ts'
+    # paths:
+    #   - 'packages/standard/**'
+    #   - 'packages/common/**'
+    #   - 'packages/webpack/**'
+    #   - 'packages/babel/**'
+    #   - 'packages/aws/src/stacks/Standard.ts'
+    #   - 'packages/aws/src/index.ts'
 
 jobs:
   standard-deploy:
