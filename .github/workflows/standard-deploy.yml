@@ -48,9 +48,9 @@ jobs:
         run: |
           yarn standard:deploy
         env:
-          - THRESHOLD: ${{ secrets.THRESHOLD }}
-          - ABSOLUTELY_SURE_THRESHOLD: ${{ secrets.ABSOLUTELY_SURE_THRESHOLD }}
-          - API_KEY: ${{ secrets.API_KEY }}
-          - API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
-          - ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          - ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+          THRESHOLD: ${{ secrets.THRESHOLD }}
+          ABSOLUTELY_SURE_THRESHOLD: ${{ secrets.ABSOLUTELY_SURE_THRESHOLD }}
+          API_KEY: ${{ secrets.API_KEY }}
+          API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
