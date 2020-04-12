@@ -2,18 +2,28 @@ import * as CDK from '@aws-cdk/core'
 import * as Lambda from '@aws-cdk/aws-lambda'
 import * as SSM from '@aws-cdk/aws-ssm'
 
+import * as path from 'path'
+import * as dotenv from 'dotenv'
+
+dotenv.config({
+  path: path.resolve(__dirname, '../../../standard/.env'),
+})
+
 export class StandardStack extends CDK.Stack {
   constructor(app: CDK.App, id: string, props: CDK.StackProps) {
     super(app, id, props)
 
-    // It should read from .env from standard package
+    const { THRESHOLD, ABSOLUTELY_SURE_THRESHOLD } = process.env as {
+      [key: string]: string
+    }
+
     const environment = {
       PREDICT_URL: SSM.StringParameter.valueForStringParameter(
         this,
         'StandardClassifierApiUrl',
       ),
-      THRESHOLD: '0.7',
-      ABSOLUTELY_SURE_THRESHOLD: '0.86',
+      THRESHOLD,
+      ABSOLUTELY_SURE_THRESHOLD,
     }
 
     new Lambda.Function(this, 'ParabainsBotStandardFunction', {
@@ -26,5 +36,7 @@ export class StandardStack extends CDK.Stack {
       functionName: 'standard',
       environment,
     })
+
+    // Cron schedule must be configured mannualy
   }
 }
