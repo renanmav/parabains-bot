@@ -1,5 +1,7 @@
 # Parabains Bot
 
+![Deploy standard package](https://github.com/renanmav/parabains-bot/workflows/Deploy%20standard%20package/badge.svg?branch=master)
+
 Monorepo utilizado para controlar [essa conta](https://twitter.com/parabainsbot) no Twitter que dá parabéns às pessoas.
 
 ## Visão geral
